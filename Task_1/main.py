@@ -1,4 +1,4 @@
-
+from src.services.customer_service import CustomerService
 
 def menu_list():
 
@@ -21,19 +21,20 @@ def menu_list():
 
 def cust_manage_menu_list():
     try:
-        id = int(input("Please enter the Customer Id: "))
+        id = str(input("Please enter the Customer Id: "))
 
         if len(id) !=8:
             raise ValueError("Id must be 8 characters long")
         
         print("\"Customer Account Menu\"")
-        selection = input("Please select one of the options to proceed:\n1. Customer Information Retrieval\n").strip()
+        selection = input("Please select one of the options to proceed:\n1. View Customer Information\n").strip()
 
         status = False
         
         try:
             if selection == "1":
-                #retrieve customer data
+                
+                print(CustomerService.get_accountInfo())
                 status = True
 
 
@@ -41,7 +42,7 @@ def cust_manage_menu_list():
             print("Please enter a numeric value between 1 to 5")
 
     except ValueError:
-        print("Please enter the a numeric value")
+        print("Please enter th1e a numeric value")
 
 
 
