@@ -5,16 +5,16 @@ In this project, a HKMU bank account management system will be developed. It doe
 bank admins' perspective. The admins will be able to manage the Customer and Business accounts. Some admins will
 have access to the Admin Accounts Management Section. The program will do the following tasks. The tasks may be elaborated upon later on. The program will offer a menu to the user and the user will have to choose an option from multiple options to proceeed to the commands.
 
-Customer Accounts Management Section
-- Read Customer Accounts and show the Account data (Pending)
-- Edit Customer Account information (Not Done)
+Customer Accounts Management
+- Show Customer Data (Done)
+- Edit Customer Account information (Pending)
 - Transfer money from Customer Account to other Customer/Business Accounts (Not Done)
 - Manage two accounts for each customer (Current and Savings) (Not Done)
 - Create new Accounts (Not Done)
 - Delete Accounts (Not Done)
 - Merge Accounts (Not Done)
 
-Business Accounts Management Section
+Business Accounts Management 
 - Have all the same tools available in the Customer Accounts section (Not Done)
 - Buy Assets (Gold & Commodities) from the Bank (Managed by the Admin Accounts) (Not Done)
 - Store and read contracts (Not Done)
@@ -22,9 +22,10 @@ Business Accounts Management Section
 - Delete Accounts (Not Done)
 - Merge Accounts (Not Done)
 
-Admin Accounts Management Section
+Admin Accounts
 - In order to access this area, the user has to log in with a username and password (Not Done)
-- Manage Assets of the Bank (Not Done)
+- Manage the Asset Items of the Bank (Not Done)
+- Manage the Asset Item Quantities of the Bank (Not Done)
 - View Assets of the Bank in graph form (Not Done)
 - Create new Accounts (Not Done)
 - Delete Accounts (Not Done)
