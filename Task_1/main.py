@@ -1,12 +1,13 @@
 from src.services.customer_service import CustomerService
+from src.services.customer_info_manager import CustomerInfoManager
 
 def menu_list():
 
     status = True
 
     while status == True:
-        print("\"\"\"Welcome to the HKMU Banking System\"\"\"")
-        selection = input("Please select one of the options to proceed:\n1. Customer Data Management\n").strip()
+        print("\n\"\"\"Welcome to the HKMU Banking System\"\"\"")
+        selection = input("Please select one of the options to proceed:\n1. Customer Data Management\n\n").strip()
     
         try:
             if selection == "1":
@@ -22,10 +23,26 @@ Customer_service = CustomerService()
 
 def cust_manage_menu_list():
     try:
-        id = str(input("Please enter the Customer ID: "))
 
-        if len(id) !=8:
-            raise ValueError
+        ID_False = False
+
+        while(ID_False == False):
+            while True:
+                id = input("Please enter the Customer ID: ").strip()
+
+                if len(id) != 8:
+                    print("Invalid ID. Must be 8 characters.")
+                else:
+                    break
+            
+            #Check if the ID exists
+            status = Customer_service.check_accountInfo(id)
+            ID_False = status
+
+            if status == False:
+                print("The inputted ID does not exist in the records")
+            else:
+                print("The inputted ID exists in the records")
         
         print("\"\"\"Customer Account Menu\"\"\"")
 
@@ -48,17 +65,26 @@ def cust_manage_menu_list():
                     print("Account Information: ")
                     Customer_service.get_accountInfo(account_id=id)
                     
+                elif selection == "2":
+                    print ("""
+                        What would you like to edit?:
+                        1. First Name
+                        2. Last Name
+                        3. Balance
+                        4. Account Type
+                    """)
+                    selection_1 = input("Please enter your selection: ").strip()
+                    CustomerInfoManager.CustomerInfoEdit(selection_1, account_id=id)
+                    print("The Changes have been made")
 
                 elif selection == "4":
-                    break
+                    menu_list()
 
             except ValueError:
                 print("Please enter a numeric value between 1 to 5")
 
     except ValueError:
         print("Please enter the correct ID")
-
-
 
 
 

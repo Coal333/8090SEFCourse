@@ -7,26 +7,16 @@ have access to the Admin Accounts Management Section. The program will do the fo
 
 Customer Accounts Management
 - Show Customer Data (Done)
-- Edit Customer Account information (Pending)
+- Edit Customer Account information (Done)
 - Transfer money from Customer Account to other Customer/Business Accounts (Not Done)
 - Manage two accounts for each customer (Current and Savings) (Not Done)
-- Create new Accounts (Not Done)
-- Delete Accounts (Not Done)
-- Merge Accounts (Not Done)
 
-Business Accounts Management 
+Business Customer Accounts Management 
 - Have all the same tools available in the Customer Accounts section (Not Done)
-- Buy Assets (Gold & Commodities) from the Bank (Managed by the Admin Accounts) (Not Done)
 - Store and read contracts (Not Done)
-- Create new Accounts (Not Done)
-- Delete Accounts (Not Done)
-- Merge Accounts (Not Done)
 
 Admin Accounts
 - In order to access this area, the user has to log in with a username and password (Not Done)
-- Manage the Asset Items of the Bank (Not Done)
-- Manage the Asset Item Quantities of the Bank (Not Done)
-- View Assets of the Bank in graph form (Not Done)
 - Create new Accounts (Not Done)
 - Delete Accounts (Not Done)
 - Merge Accounts (Not Done)
