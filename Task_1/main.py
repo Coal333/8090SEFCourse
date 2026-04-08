@@ -1,13 +1,15 @@
 from src.services.customer_service import CustomerService
 from src.services.customer_info_manager import CustomerInfoManager
 
+Customer_Service = CustomerService()
+
 def menu_list():
 
     status = True
 
     while status == True:
         print("\n\"\"\"Welcome to the HKMU Banking System\"\"\"")
-        selection = input("Please select one of the options to proceed:\n1. Customer Data Management\n\n").strip()
+        selection = input("Please select one of the options to proceed:\n1. Customer Data Management\n").strip()
     
         try:
             if selection == "1":
@@ -18,31 +20,28 @@ def menu_list():
         except ValueError:
             print("Please enter a numeric value between 1 to 5")
 
-
-Customer_service = CustomerService()
-
 def cust_manage_menu_list():
     try:
 
-        ID_False = False
+        while True:
+            id = input("Please enter the Customer ID: ").strip()
 
-        while(ID_False == False):
-            while True:
-                id = input("Please enter the Customer ID: ").strip()
-
-                if len(id) != 8:
-                    print("Invalid ID. Must be 8 characters.")
-                else:
-                    break
-            
-            #Check if the ID exists
-            status = Customer_service.check_accountInfo(id)
-            ID_False = status
-
+            if len(id) != 8:
+                print("Invalid ID. Must be 8 characters.")
+                continue
+            else:
+                break
+        
+        #Check if the ID exists
+        status = Customer_Service.check_accountInfo(id)
+        
+        while True:
             if status == False:
                 print("The inputted ID does not exist in the records")
+                continue
             else:
                 print("The inputted ID exists in the records")
+                break
         
         print("\"\"\"Customer Account Menu\"\"\"")
 
@@ -63,7 +62,7 @@ def cust_manage_menu_list():
                 if selection == "1":
                     
                     print("Account Information: ")
-                    Customer_service.get_accountInfo(account_id=id)
+                    Customer_Service.get_accountInfo(account_id=id)
                     
                 elif selection == "2":
                     print ("""
@@ -81,7 +80,7 @@ def cust_manage_menu_list():
                 if selection == "3":
 
                     print("Transfer Money: ")
-                    Customer_service.transfer_money(account_id=id)
+                    Customer_Service.transfer_money(account_id=id)
                     print("The money has been transferred")
 
                 elif selection == "4":

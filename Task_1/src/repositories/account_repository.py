@@ -59,11 +59,10 @@ class AccountRepository:
                 lines = file.readlines()
             
             updated_lines = []
+            selection_1 = int(selection_1)
             
             for line in lines:
                 id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
-
-                selection_1 = int(selection_1)
 
                 if str(id) == str(account_id):
 
@@ -98,20 +97,29 @@ class AccountRepository:
                 lines = file.readlines()
 
             updated_lines = []
+            choice = int(choice)
 
             for line in lines:
                 id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
+
+                balance_current = float(balance_current)
 
                 if str(id) == str(account_id):
 
                     if choice == 1:
                         balance_current -= amount
+                        balance_current = str(balance_current)
 
                     elif choice == 2:
                         balance_checking -= amount
+                        balance_current = str(balance_current)
+
+                    print("Updated Record:", id, balance_current, balance_checking)
 
                 updated_lines.append(f"{id},{first_name},{last_name},{balance_current},{balance_checking},{acc_type}\n")
 
+            with open(AccountRepository.FILE_PATH, "w") as file:
+                file.writelines(updated_lines)
 
         except FileNotFoundError:
             print("File not found")
