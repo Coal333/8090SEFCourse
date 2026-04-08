@@ -70,12 +70,19 @@ def cust_manage_menu_list():
                         What would you like to edit?:
                         1. First Name
                         2. Last Name
-                        3. Balance
-                        4. Account Type
+                        3. Current Balance
+                        4. Checking Balance
+                        5. Account Type
                     """)
                     selection_1 = input("Please enter your selection: ").strip()
                     CustomerInfoManager.CustomerInfoEdit(selection_1, account_id=id)
                     print("The Changes have been made")
+
+                if selection == "3":
+
+                    print("Transfer Money: ")
+                    Customer_service.transfer_money(account_id=id)
+                    print("The money has been transferred")
 
                 elif selection == "4":
                     menu_list()
