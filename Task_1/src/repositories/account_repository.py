@@ -103,6 +103,7 @@ class AccountRepository:
                 id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
 
                 balance_current = float(balance_current)
+                balance_checking = float(balance_checking)
 
                 if str(id) == str(account_id):
 
@@ -113,8 +114,33 @@ class AccountRepository:
                     elif choice == 2:
                         balance_checking -= amount
                         balance_current = str(balance_current)
-
+                                        
                     print("Updated Record:", id, balance_current, balance_checking)
+
+                updated_lines.append(f"{id},{first_name},{last_name},{balance_current},{balance_checking},{acc_type}\n")
+            
+            with open(AccountRepository.FILE_PATH, "w") as file:
+                file.writelines(updated_lines)
+
+            updated_lines = []
+
+            for line in lines:
+                id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
+
+                balance_current = float(balance_current)
+                balance_checking = float(balance_checking)
+
+                if str(id) == str(send_to_id):
+
+                    if choice == 1:
+                        balance_current += amount
+                        balance_current = str(balance_current)
+
+                    elif choice == 2:
+                        balance_checking += amount
+                        balance_current = str(balance_current)
+
+                    print("Updated Record:", send_to_id, balance_current, balance_checking)
 
                 updated_lines.append(f"{id},{first_name},{last_name},{balance_current},{balance_checking},{acc_type}\n")
 

@@ -7,16 +7,16 @@ have access to the Admin Accounts Management Section. The program will do the ta
 
 Customer Accounts Management
 - Show Customer Data (Done)
-- Edit Customer Account information (Done)
-- Transfer money from Customer Account to other Customer/Business Accounts (Not Done)
-- Manage two accounts for each customer (Current and Savings) (Done)
+- Edit Customer Account information 
+- Transfer money from Customer Account to other Customer/Business Accounts 
+- Manage two accounts for each customer (Current and Savings) 
 
 Business Customer Accounts Management 
-- Have all the same tools available in the Customer Accounts section (Not Done)
-- Save and read contracts (Not Done)
+- Have all the same tools available in the Customer Accounts section 
+- Create, read and delete contracts (Not Done)
 
-Admin Accounts
+#Only after the Task_1 Report, Task_2 code and Report are nearly done
+<!-- Admin Accounts
 - In order to access this area, the user has to log in with a username and password (Not Done)
 - Create new Accounts (Not Done)
-- Delete Accounts (Not Done)
-- View all Accounts (Not Done)
+- Delete Accounts (Not Done) -->
