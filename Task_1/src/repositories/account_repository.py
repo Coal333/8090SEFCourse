@@ -25,7 +25,6 @@ class AccountRepository:
 
         except FileNotFoundError:
             print("File not found")
-            print("Tried path:", AccountRepository.FILE_PATH)
 
     def load_customer_data(account_id):
 
@@ -50,7 +49,6 @@ class AccountRepository:
 
         except FileNotFoundError:
             print("File not found")
-            print("Tried path:", AccountRepository.FILE_PATH)
         
     def edit_customer_data(account_id, input_1, selection_1):
 
@@ -88,7 +86,6 @@ class AccountRepository:
 
         except FileNotFoundError:
             print("File not found")
-            print("Tried path:", AccountRepository.FILE_PATH)
 
     def transfer_money(account_id, send_to_id, choice, amount):
 
@@ -149,4 +146,3 @@ class AccountRepository:
 
         except FileNotFoundError:
             print("File not found")
-            print("Tried path:", AccountRepository.FILE_PATH)
