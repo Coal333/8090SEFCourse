@@ -39,7 +39,7 @@ class AccountRepository:
                     Account_1 = Account(id, first_name, last_name, float(balance_current), float(balance_checking), acc_type) 
 
                     if id == account_id:
-                         print(Account_1.id + " " + Account_1.first_name + " " + str(Account_1.balance) + " " + Account_1.acc_type) 
+                         print(Account_1.id + " " + Account_1.first_name + " " + str(Account_1.balance) + " " + Account_1.acc_type + "\n") 
                          Loop_Status = False   
 
                     if not Loop_Status:

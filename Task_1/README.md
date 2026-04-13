@@ -8,7 +8,7 @@ have access to the Admin Accounts Management Section. The program will do the ta
 
 Customer Accounts Management
 
-- Show Customer Data (Done)
+- Show Customer Data
 - Edit Customer Account information
 - Transfer money from Customer Account to other Customer/Business Accounts
 - Manage two accounts for each customer (Current and Savings)
@@ -16,11 +16,4 @@ Customer Accounts Management
 Business Customer Accounts Management
 
 - Have all the same tools available in the Customer Accounts section
-- Create, read and delete (Delete all contracts) contracts (Not Done)
-
-#Do only after the Task_1 Report, Task_2 code and Report are nearly done
-
-<!-- Admin Accounts
-- In order to access this area, the user has to log in with a username and password (Not Done)
-- Create new Accounts (Not Done)
-- Delete Accounts (Not Done) -->
+- Create, read and delete (Delete all contracts) contracts

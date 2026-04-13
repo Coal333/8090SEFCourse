@@ -24,25 +24,29 @@ def menu_list():
 def cust_manage_menu_list():
     try:
 
-        while True:
+        loop_status= True
+
+        while loop_status:
+
             id = input("Please enter the Customer ID: ").strip()
 
-            if len(id) != 8:
-                print("Invalid ID. Must be 8 characters.")
-                continue
-            else:
-                break
+            while True: 
+                if len(id) != 8:
+                    print("Invalid ID. Must be 8 characters.")
+                    continue
+                else:
+                    break
 
-        #Check if the ID exists
-        status = Customer_Service.check_accountInfo(id)
-        
-        while True:
+            #Check if the ID exists
+
+            status = Customer_Service.check_accountInfo(id)
+            
             if status == False:
                 print("The inputted ID does not exist in the records")
-                continue
+                
             else:
                 print("The inputted ID exists in the records")
-                break
+                loop_status = False
 
         customer_type = ""
 
@@ -71,10 +75,12 @@ def cust_manage_menu_list():
                 if selection == "1":
                     
                     B_A_Status_Key = "Customer_M_M"
+                    break
                     
                 elif selection == "2":
 
                     B_A_Status_Key = "Contract_M_M"
+                    break
             
         print("\"\"\"Customer Account Menu\"\"\"")
 
@@ -137,28 +143,30 @@ def cust_manage_menu_list():
                         """)
                 selection = input("Please enter your selection: ").strip()
 
-            try:
+                try:
+
                     if selection == "1":
                         
-                        print("View all Contracts: ")
+                        print("View all Contracts:\n")
                         Business_Service.get_allContracts(account_id=id)
 
                     elif selection == "2":
 
-                        print("View all Contracts: ")
                         Business_Service.create_newContract(account_id=id)
+                        print("The contract has been saved\n")
 
                     elif selection == "3":
 
-                        print("View all Contracts: ")
                         Business_Service.delete_allContracts(account_id=id)
+                        print("All the records have been deleted\n")
 
                     elif selection == "4":
+
                         menu_list()
-                    
-            except ValueError:
-                    print("Please enter a numeric value between 1 to 5")
-            
+
+                except ValueError:
+                    print("Please enter a numeric value between 1 to 4")
+
     except ValueError:
         print("Please enter the correct ID")
 
