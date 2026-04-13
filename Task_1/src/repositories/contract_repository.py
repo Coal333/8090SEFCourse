@@ -46,7 +46,7 @@ class ContractRepository:
 
         try:
             with open(ContractRepository.FILE_PATH, "r") as file:
-            lines = file.readlines()
+                lines = file.readlines()
 
             updated_lines = []
 

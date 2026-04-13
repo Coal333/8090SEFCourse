@@ -3,8 +3,7 @@
 Task 1
 
 In this project, a HKMU bank account management system will be developed. It does bank operations from the
-bank admins' perspective. The admins will be able to manage the Customer and Business accounts. Some admins will
-have access to the Admin Accounts Management Section. The program will do the tasks as shown below. The tasks may be elaborated upon later on. The program will offer a menu to the user and the user will have to choose an option from multiple options to proceeed to the commands.
+bank admins' perspective. The program will do the tasks as shown below. The tasks may be elaborated upon later on. The program will offer a menu to the user and the user will have to choose an option from multiple options to proceeed to the commands.
 
 Customer Accounts Management
 
