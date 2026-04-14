@@ -21,7 +21,7 @@ class ContractRepository:
                     Contract_1 = Contract(id, company_name, contract_title, contract_text)
 
                     if id == account_id: 
-                        print(Contract_1.id + "\n" + Contract_1.company_name + "\n" + Contract_1.contract_title + "\n" + Contract_1.contract_text)
+                        print(Contract_1.id + "\n" + Contract_1.company_name + "\n" + Contract_1.contract_title + "\n" + Contract_1.contract_text + "\n")
 
         except FileNotFoundError:
             print("File not found")

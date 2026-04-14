@@ -2,6 +2,8 @@ from src.services.customer_service import CustomerService
 from src.services.customer_info_manager import CustomerInfoManager
 from src.services.business_service import BusinessService
 
+import random
+
 Customer_Service = CustomerService()
 Business_Service = BusinessService()
 
@@ -63,12 +65,15 @@ def cust_manage_menu_list():
         if customer_type == "Business":
 
             status_1 = True
+            state_3 = False
+
             while status_1 == True:
 
                 print ("""
                     Please select one of the options to proceed:
                     1. Access the Customer Management Menu
                     2. Access the Contract Managment Menu
+                    3. Generate Today's random color
                 """)
                 selection = input("Please enter your selection: ").strip()
 
@@ -81,7 +86,36 @@ def cust_manage_menu_list():
 
                     B_A_Status_Key = "Contract_M_M"
                     break
-            
+
+                else:
+                  
+                    if state_3 == False:
+                        num = random.random()
+                        color = ""
+
+                        if 0.8 <= num < 1:
+                            color = "Red"
+
+                        elif 0.6 <= num < 0.8:
+                            color = "Blue"
+
+                        elif 0.4 <= num < 0.6:
+                            color = "Green"
+                        
+                        elif 0.2 <= num < 0.4:
+                            color = "Yellow"
+                        
+                        else:
+                            color = "Orange"
+
+                        print(f"Today's random color is {color}")
+
+                        state_3 = True
+
+                    else:
+
+                        print(f"Today's random color was already shown before, it was {color}")
+
         print("\"\"\"Customer Account Menu\"\"\"")
 
         if customer_type == "Standard" or B_A_Status_Key == "Customer_M_M":

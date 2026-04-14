@@ -16,3 +16,4 @@ Business Customer Accounts Management
 
 - Have all the same tools available in the Customer Accounts section
 - Create, read and delete (Delete all contracts) contracts
+- Generate Today's random color
