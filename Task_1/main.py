@@ -97,38 +97,35 @@ def cust_manage_menu_list():
                         """)
                 selection = input("Please enter your selection: ").strip()
                 
-                try:
-                    if selection == "1":
-                        
-                        print("Account Information: ")
-                        Customer_Service.get_accountInfo(account_id=id)
-                        
-                    elif selection == "2":
+                
+                if selection == "1":
+                    
+                    print("Account Information: ")
+                    Customer_Service.get_accountInfo(account_id=id)
+                    
+                elif selection == "2":
 
-                        print ("""
-                            What would you like to edit?:
-                            1. First Name
-                            2. Last Name
-                            3. Current Balance
-                            4. Checking Balance
-                            5. Account Type
-                        """)
-                        selection_1 = input("Please enter your selection: ").strip()
-                        CustomerInfoManager.CustomerInfoEdit(selection_1, account_id=id)
-                        print("The Changes have been made")
+                    print ("""
+                        What would you like to edit?:
+                        1. First Name
+                        2. Last Name
+                        3. Current Balance
+                        4. Checking Balance
+                        5. Account Type
+                    """)
+                    selection_1 = input("Please enter your selection: ").strip()
+                    CustomerInfoManager.CustomerInfoEdit(selection_1, account_id=id)
+                    print("The Changes have been made")
 
-                    if selection == "3":
+                if selection == "3":
 
-                        print("Transfer Money: ")
-                        Customer_Service.transfer_money(account_id=id)
-                        print("The money has been transferred")
+                    print("Transfer Money: ")
+                    Customer_Service.transfer_money(account_id=id)
+                    print("The money has been transferred")
 
-                    elif selection == "4":
+                elif selection == "4":
 
-                        menu_list()
-
-                except ValueError:
-                    print("Please enter a numeric value between 1 to 5")
+                    menu_list()
 
         if B_A_Status_Key == "Contract_M_M":
 
@@ -143,29 +140,24 @@ def cust_manage_menu_list():
                         """)
                 selection = input("Please enter your selection: ").strip()
 
-                try:
+                if selection == "1":
+                    
+                    print("View all Contracts:\n")
+                    Business_Service.get_allContracts(account_id=id)
 
-                    if selection == "1":
-                        
-                        print("View all Contracts:\n")
-                        Business_Service.get_allContracts(account_id=id)
+                elif selection == "2":
 
-                    elif selection == "2":
+                    Business_Service.create_newContract(account_id=id)
+                    print("The contract has been saved\n")
 
-                        Business_Service.create_newContract(account_id=id)
-                        print("The contract has been saved\n")
+                elif selection == "3":
 
-                    elif selection == "3":
+                    Business_Service.delete_allContracts(account_id=id)
+                    print("All the records have been deleted\n")
 
-                        Business_Service.delete_allContracts(account_id=id)
-                        print("All the records have been deleted\n")
+                elif selection == "4":
 
-                    elif selection == "4":
-
-                        menu_list()
-
-                except ValueError:
-                    print("Please enter a numeric value between 1 to 4")
+                    menu_list()
 
     except ValueError:
         print("Please enter the correct ID")

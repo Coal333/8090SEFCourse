@@ -1,5 +1,6 @@
 import os
-from src.models.account import Account
+from src.models.business_account import Business_Account
+from src.models.customer_account import Customer_Account
 
 class AccountRepository:
 
@@ -16,9 +17,9 @@ class AccountRepository:
             with open(AccountRepository.FILE_PATH, "r") as file:
 
                 for line in file:
-                    id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
+                    id, A, B, balance_current, balance_checking, acc_type = line.strip().split(",")
 
-                    if id == account_id: 
+                    if str(id).strip() == str(account_id).strip():
                         return True 
                     
             return False
@@ -34,14 +35,34 @@ class AccountRepository:
             with open(AccountRepository.FILE_PATH, "r") as file:
                 Loop_Status = True
                 for line in file:
-                    id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
 
-                    Account_1 = Account(id, first_name, last_name, float(balance_current), float(balance_checking), acc_type) 
+                    id, A, B, balance_current, balance_checking, acc_type = line.strip().split(",")
 
-                    if id == account_id:
-                         print(Account_1.id + " " + Account_1.first_name + " " + str(Account_1.balance) + " " + Account_1.acc_type + "\n") 
-                         Loop_Status = False   
+                    id_text = list(id)
+                    first_char = id_text[0]
 
+                    if first_char == "A":
+                        customer_type = "Standard"
+                        id, fist_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
+                    else:  
+                        customer_type = "Business"
+                        id, company_name, company_type, balance_current, balance_checking, acc_type = line.strip().split(",")
+
+                    if customer_type == "Standard":
+                        Account_1 = Customer_Account(id, fist_name, last_name, float(balance_current), float(balance_checking), acc_type) 
+                    else:
+                        Account_1 = Business_Account(id, company_name, company_type, float(balance_current), float(balance_checking), acc_type) 
+
+
+                    if str(id).strip() == str(account_id).strip():
+                         
+                        if customer_type == "Standard":
+                            print(Account_1.id + " " + Account_1.first_name + " " + str(Account_1.balance_current) + " " + str(Account_1.balance_checking) + " " + Account_1.acc_type + "\n") 
+                            Loop_Status = False   
+                        else:
+                            print(Account_1.id + " " + Account_1.company_name + " " + str(Account_1.balance_current) + " " + str(Account_1.balance_checking) + " " + Account_1.acc_type + "\n") 
+                            Loop_Status = False 
+                        
                     if not Loop_Status:
                         break
                      
@@ -62,7 +83,7 @@ class AccountRepository:
             for line in lines:
                 id, first_name, last_name, balance_current, balance_checking, acc_type = line.strip().split(",")
 
-                if str(id) == str(account_id):
+                if str(id).strip() == str(account_id).strip():
 
                     if selection_1 == 1:
                         first_name = input_1
@@ -102,7 +123,7 @@ class AccountRepository:
                 balance_current = float(balance_current)
                 balance_checking = float(balance_checking)
 
-                if str(id) == str(account_id):
+                if str(id).strip() == str(account_id).strip():
 
                     if choice == 1:
                         balance_current -= amount
@@ -127,7 +148,7 @@ class AccountRepository:
                 balance_current = float(balance_current)
                 balance_checking = float(balance_checking)
 
-                if str(id) == str(send_to_id):
+                if str(id).strip() == str(send_to_id).strip():
 
                     if choice == 1:
                         balance_current += amount
