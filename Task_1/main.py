@@ -7,22 +7,26 @@ import random
 Customer_Service = CustomerService()
 Business_Service = BusinessService()
 
+#Main menu list showing method (First Page)
 def menu_list():
 
     status = True
-
+    #Greetings page
     while status == True:
         print("\n\"\"\"Welcome to the HKMU Banking System\"\"\"")
-        selection = input("Please select one of the options to proceed:\n1. Customer Data Management\n").strip()
+        selection = input("Please select one of the options to proceed:\n1. Customer Management\n2. Exit Program\n").strip()
     
         try:
             if selection == "1":
                 cust_manage_menu_list()
+   
+            if selection == "2":
                 status = False
 
         except ValueError:
             print("Please enter a numeric value between 1 to 5")
 
+#Secondary Menu List showing method (Second Page)
 def cust_manage_menu_list():
     try:
 
@@ -40,7 +44,6 @@ def cust_manage_menu_list():
                     break
 
             #Check if the ID exists
-
             status = Customer_Service.check_accountInfo(id)
             
             if status == False:
@@ -50,6 +53,7 @@ def cust_manage_menu_list():
                 print("The inputted ID exists in the records")
                 loop_status = False
 
+        #Discerning Customer Type
         customer_type = ""
 
         id_text = list(id)
@@ -67,6 +71,7 @@ def cust_manage_menu_list():
             status_1 = True
             state_3 = False
 
+            #Business Customers exclusive page
             while status_1 == True:
 
                 print ("""
@@ -77,51 +82,41 @@ def cust_manage_menu_list():
                 """)
                 selection = input("Please enter your selection: ").strip()
 
+                #Business Customers given access to Customer and Contract Management Pages
                 if selection == "1":
-                    
                     B_A_Status_Key = "Customer_M_M"
                     break
-                    
                 elif selection == "2":
-
                     B_A_Status_Key = "Contract_M_M"
                     break
-
                 else:
                   
                     if state_3 == False:
                         num = random.random()
                         color = ""
-
                         if 0.8 <= num < 1:
                             color = "Red"
-
                         elif 0.6 <= num < 0.8:
                             color = "Blue"
-
                         elif 0.4 <= num < 0.6:
                             color = "Green"
-                        
                         elif 0.2 <= num < 0.4:
                             color = "Yellow"
-                        
                         else:
                             color = "Orange"
-
                         print(f"Today's random color is {color}")
-
                         state_3 = True
-
                     else:
-
                         print(f"Today's random color was already shown before, it was {color}")
 
+        #Page open to both Standard and Business Customers
         print("\"\"\"Customer Account Menu\"\"\"")
 
         if customer_type == "Standard" or B_A_Status_Key == "Customer_M_M":
 
             status = True
             while status == True:
+                #Customer Managment Menu List
                 print ("""
                     Please select one of the options to proceed:
                     1. View Customer Information
@@ -131,12 +126,13 @@ def cust_manage_menu_list():
                         """)
                 selection = input("Please enter your selection: ").strip()
                 
-                
+                #Showing Customer Information
                 if selection == "1":
                     
                     print("Account Information: ")
                     Customer_Service.get_accountInfo(account_id=id)
                     
+                #Editing Customer Information
                 elif selection == "2":
 
                     print ("""
@@ -151,12 +147,14 @@ def cust_manage_menu_list():
                     CustomerInfoManager.CustomerInfoEdit(selection_1, account_id=id)
                     print("The Changes have been made")
 
+                #Transfer Money from one account to another
                 if selection == "3":
 
                     print("Transfer Money: ")
                     Customer_Service.transfer_money(account_id=id)
                     print("The money has been transferred")
 
+                #Going back to the first page
                 elif selection == "4":
 
                     menu_list()
@@ -164,6 +162,8 @@ def cust_manage_menu_list():
         if B_A_Status_Key == "Contract_M_M":
 
             status = True
+
+            #Contract Managment Menu List
             while status == True:
                 print ("""
                     Please select one of the options to proceed:
@@ -174,21 +174,25 @@ def cust_manage_menu_list():
                         """)
                 selection = input("Please enter your selection: ").strip()
 
+                #Viewing all Contracts
                 if selection == "1":
                     
                     print("View all Contracts:\n")
                     Business_Service.get_allContracts(account_id=id)
 
+                #Creating a new contract
                 elif selection == "2":
 
                     Business_Service.create_newContract(account_id=id)
                     print("The contract has been saved\n")
 
+                #Deleting all contracts
                 elif selection == "3":
 
                     Business_Service.delete_allContracts(account_id=id)
                     print("All the records have been deleted\n")
-
+                    
+                #Going back to the first page
                 elif selection == "4":
 
                     menu_list()
