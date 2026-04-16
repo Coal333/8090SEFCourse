@@ -48,26 +48,5 @@ class ContractRepository:
         except FileNotFoundError:
             print("File not found")
 
-    #Deletes all contracts of the account
-    def delete_allContracts(account_id):
-
-        try:
-            with open(ContractRepository.FILE_PATH, "r") as file:
-                lines = file.readlines()
-
-            updated_lines = []
-
-            for line in lines:
-                id, company_name, contract_title, contract_text = line.strip().split(",", 3)
-
-                #If the contract is not the account's it is added to the list to be kept
-                if id != account_id:
-                    updated_lines.append(line)
-                
-            with open(ContractRepository.FILE_PATH, "w") as file:
-                file.writelines(updated_lines)
-
-        except FileNotFoundError:
-            print("File not found")
 
         

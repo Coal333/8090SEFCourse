@@ -1,3 +1,5 @@
+import sys
+
 from src.services.customer_service import CustomerService
 from src.services.customer_info_manager import CustomerInfoManager
 from src.services.business_service import BusinessService
@@ -21,7 +23,7 @@ def menu_list():
                 cust_manage_menu_list()
    
             if selection == "2":
-                status = False
+                sys.exit()
 
         except ValueError:
             print("Please enter a numeric value between 1 to 5")
@@ -169,8 +171,7 @@ def cust_manage_menu_list():
                     Please select one of the options to proceed:
                     1. View all Contracts
                     2. Create a new Contract
-                    3. Delete all Contracts
-                    4. Go back to the first page
+                    3. Go back to the first page
                         """)
                 selection = input("Please enter your selection: ").strip()
 
@@ -185,16 +186,10 @@ def cust_manage_menu_list():
 
                     Business_Service.create_newContract(account_id=id)
                     print("The contract has been saved\n")
-
-                #Deleting all contracts
-                elif selection == "3":
-
-                    Business_Service.delete_allContracts(account_id=id)
-                    print("All the records have been deleted\n")
                     
                 #Going back to the first page
-                elif selection == "4":
-
+                elif selection == "3":
+                    
                     menu_list()
 
     except ValueError:

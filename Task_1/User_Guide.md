@@ -7,7 +7,7 @@ bank admins' perspective. The program will do the tasks as shown below. The task
 
 User Guide:
 
-Link to 5 minute video:
+Link to the 5 minute video:
 
 Make sure to have Python 3.x installed
 
@@ -15,7 +15,7 @@ Run:
 python main.py
 (While you are in the Task_1 directory in powershell)
 
-How to use program:
+How to use the program:
 
 Main menu would look like this:
 
@@ -63,5 +63,4 @@ Below is the Contract Management Menu, it does the following
 
 View all Contracts: View all contracts of the account
 Create a new Contract: Create a new contract under the account
-Delete all Contracts: Deletes all contracts of the account
 Go back to the first page: Goes back to the main menu

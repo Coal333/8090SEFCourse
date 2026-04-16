@@ -69,7 +69,3 @@ class BusinessService:
         ContractRepository.create_newContract(account_id, company_name, contract_title, contract_text)
 
         print("Contract Title: " + contract_1.get_contract_title())
-
-    #Deleting all contracts of the user
-    def delete_allContracts(self, account_id):
-        ContractRepository.delete_allContracts(account_id)
