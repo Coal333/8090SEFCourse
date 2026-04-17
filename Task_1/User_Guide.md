@@ -5,7 +5,7 @@ Task 1
 In this project, a HKMU bank account management system will be developed. It does bank operations from the
 bank admins' perspective. The program will do the tasks as shown below. The tasks may be elaborated upon later on. The program will offer a menu to the user and the user will have to choose an option from multiple options to proceeed to the commands.
 
-User Guide:
+User Guide: https://mailouhkedu-my.sharepoint.com/:v:/g/personal/s1404780_live_hkmu_edu_hk/IQB2PTvtv5jhT4iTvVm9SwoNAQATk8CDhdHmR77ZenV2YD4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bG6RLg
 
 Link to the 5 minute video:
 
