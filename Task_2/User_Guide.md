@@ -2,7 +2,7 @@
 
 Task 2
 
-User Guide:
+User Guide: https://mailouhkedu-my.sharepoint.com/:v:/g/personal/s1404780_live_hkmu_edu_hk/IQCtEYoAgZT4RZdY68cMSwoUAR8kQzqykWKScg8RQXCkIPg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=X91pcx
 
 Link to the 5 minute video:
 

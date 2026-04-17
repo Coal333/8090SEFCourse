@@ -5,7 +5,12 @@
 #Function of Code: Insert values in to the tree, and make sure the Red Black Tree rules are kept. Recoloting
 #and rotations are used to achieve this. 
 
-class Node:
+"""1. Insert values in to the tree
+2. Detect violations to the Red Black Tree rules
+3. recoloring , rotations  
+"""
+
+class Node: #Each node has data value, color and children, parent references
     def __init__(self, data):
         self.data = data
         self.color = "RED"   # "RED" or "BLACK"
@@ -101,7 +106,7 @@ class RedBlackTree:
 
     # --- Insert ---
 
-    def insert(self, data):
+    def insert(self, data): #Inserts a new value in to a tree
         node = Node(data)
         node.left = self.NIL
         node.right = self.NIL
